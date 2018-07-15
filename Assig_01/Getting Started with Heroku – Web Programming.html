@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-CA">
+
+<head>
+
+    	<title>Getting Started with Heroku  &#8211;  Web Programming</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="generator" content="Spyropress 3.7.0" />
+	<link rel="alternate" type="application/rss+xml" title="Web Programming RSS Feed" href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/feed/" />
+	<link rel="pingback" href="http://zenit.senecac.on.ca/~patrick.crawford/xmlrpc.php" />
+<meta name='robots' content='noindex,follow' />
+<link rel="alternate" type="application/rss+xml" title="Web Programming &raquo; Feed" href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Web Programming &raquo; Comments Feed" href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"\/~patrick.crawford\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.1"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d");return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(String.fromCharCode(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(String.fromCharCode(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(String.fromCharCode(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(String.fromCharCode(55357,56835),0,0):e.fillText(String.fromCharCode(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='main-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/main.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-responsive-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/responsive.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='prettyPhoto-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/prettyPhoto.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/jquery-ui.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='turquoise-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/color-scheme/turquoise.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/flexslider.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/js/owl-carousel/owl.carousel.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-theme-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/js/owl-carousel/owl.theme.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-animate-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/theme-animate.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dynamic-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/dynamic.css?ver=2.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='builder-css'  href='/~patrick.crawford/wp-content/themes/boson/assets/css/builder.css?ver=2.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='/~patrick.crawford/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='http://zenit.senecac.on.ca/~patrick.crawford/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://zenit.senecac.on.ca/~patrick.crawford/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://zenit.senecac.on.ca/~patrick.crawford/wp-includes/wlwmanifest.xml" /> 
+
+<link rel="canonical" href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/getting-started-with-heroku/" />
+<link rel='shortlink' href='http://zenit.senecac.on.ca/~patrick.crawford/?p=789' />
+<link rel="alternate" type="application/json+oembed" href="http://zenit.senecac.on.ca/~patrick.crawford/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fzenit.senecac.on.ca%2F%7Epatrick.crawford%2Findex.php%2Fweb322%2Fcourse-notes%2Fgetting-started-with-heroku%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://zenit.senecac.on.ca/~patrick.crawford/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fzenit.senecac.on.ca%2F%7Epatrick.crawford%2Findex.php%2Fweb322%2Fcourse-notes%2Fgetting-started-with-heroku%2F&#038;format=xml" />
+
+</head>
+
+
+<body class="page page-id-789 page-child parent-pageid-205 page-template-default chrome">
+
+<!-- wrapper -->
+<div id="wrapper">
+<div class="main full">
+    <!--[if lt IE 8]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
+
+    <!-- header -->
+
+     <header id="header">
+
+        <div class="b-top-bar">
+    <div class="layout">
+        <div class="wrap-left">
+            <span class="top-bar-text"><!--Professor - Seneca College-->Seneca College</span>
+        </div>
+        <div class="wrap-right">
+                        <!--<div class="top-bar-social"><a  class="tw" href="https://twitter.com/patatseneca" target="_blank" ><i class="icon-twitter"></i></a></div>-->
+        </div>
+    </div>
+</div>   
+<div class="sticky-header clearfix" >     
+    <div class="header">
+        <div class="layout clearfix">
+            <div class="mob-layout wrap-left">
+                <div class="logo" id="logo"><a class = "logo" href="http://zenit.senecac.on.ca/~patrick.crawford/" title="Web Programming">Web Programming</a></div>                <div class="btn-menu icon-reorder"></div>  
+            </div>
+            <div class="pull-right">
+                <form  class="b-search-form" role="search" method="get" id="searchform" action="http://zenit.senecac.on.ca/~patrick.crawford/">
+    <div class="input-wrap">
+        <i class="icon-search"></i>
+        <input type="text" name="s" placeholder="Search..." value="" >
+    </div>
+</form>
+            
+            </div>
+            <div class="menu-right pull-right">           
+                <ul id="menu-primary" class="menu"><li class="active dropdown"><a href="#" class="dropdown-toggle">WEB322</a>
+<ul role="menu" class="submenu">
+	<li class="active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/">WEB322 Home</a></li>
+	<li class="active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/">Course Notes</a></li>
+	<li><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/web322-weekly-schedule/">Weekly Schedule</a></li>
+	<li class="active active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/getting-started-with-heroku/">Getting Started with Heroku</a></li>
+	<li><a target="_blank" href="https://github.com/Seneca-WEB322/examples">Examples (GitHub)</a></li>
+</ul>
+</li>
+</ul>            </div>
+            
+        </div>
+        <ul id="menu-primary-1" class="mob-menu"><li class="active dropdown"><a href="#" class="dropdown-toggle">WEB322</a>
+<ul role="menu" class="submenu">
+	<li class="active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/">WEB322 Home</a></li>
+	<li class="active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/">Course Notes</a></li>
+	<li><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/web322-weekly-schedule/">Weekly Schedule</a></li>
+	<li class="active active"><a href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/getting-started-with-heroku/">Getting Started with Heroku</a></li>
+	<li><a target="_blank" href="https://github.com/Seneca-WEB322/examples">Examples (GitHub)</a></li>
+</ul>
+</li>
+</ul>    </div>
+</div>
+
+
+
+     </header>
+
+     <!-- /header -->
+
+    
+
+
+<div class="b-titlebar">
+	<div class="layout">
+		<!-- Bread Crumbs -->
+		<!--<ul class="crumbs">
+			<li>You are here:</li>
+			<li><a href="http://zenit.senecac.on.ca/~patrick.crawford">Home</a></li>
+			<li><a href="#">Getting Started with Heroku</a></li>
+		</ul>-->
+		<ul class="crumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+		
+			<!-- Breadcrumb NavXT 5.3.1 -->
+<li class="home"><li><a property="item" typeof="WebPage" title="Go to Web Programming." href="http://zenit.senecac.on.ca/~patrick.crawford" class="home"><span property="name">Web Programming</span></a><meta property="position" content="1"></li></li>
+<li><li><a property="item" typeof="WebPage" title="Go to WEB322 Home." href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/" class="post post-page"><span property="name">WEB322 Home</span></a><meta property="position" content="2"></li></li>
+<li><li><a property="item" typeof="WebPage" title="Go to WEB322 Course Notes." href="http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/" class="post post-page"><span property="name">WEB322 Course Notes</span></a><meta property="position" content="3"></li></li>
+<li class="current_item"><li><span property="name">Getting Started with Heroku</span><meta property="position" content="4"></li></li>
+		</ul>
+		<!-- Title -->
+		<h1>Getting Started with Heroku</h1>
+	</div>
+</div>
+<div class="content">
+
+    <!-- content -->
+
+    <div class="content shortcodes">
+
+                <div class="layout"><div id="post-789" class="post-789 page type-page status-publish hentry post-1 odd">
+
+        <div class="row">
+<div class="row-item col-3_4">
+<h3 class="lined">WEB322 on Heroku</h3>
+<img src="http://zenit.senecac.on.ca/~patrick.crawford/wp-content/uploads/2017/02/heroku-logo-300x100.png" />
+<p>The main server environment that we will be using in WEB322 is <strong>Heroku</strong>.  From their website:
+<blockquote>
+"Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches."</blockquote>Essentially, Heroku manages the hardware infrastructure and deployment tasks for our node.js applications in a remote server environment.  Developers using Heroku can extend their applications by incorporating components from a large <a href="https://elements.heroku.com/" target="_blank">marketplace</a> featuring components like database servers, scheduling components, toolkits for monitoring applications, etc. all managed remotely on their servers.  Developers just need to provide the code and Heroku does the rest:</p>
+
+<iframe id='heroku-for-teams' class='' src='https://player.vimeo.com/video/165632155?api=1&byline=0&title=0&portrait=0&frameborder=0&player_id=heroku-for-teams' width='656' height='369' style="width:656px; max-width:100%; margin:10px 0 15px 0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<p>The best thing - <strong>getting started is free!</strong> - This is where we come in:</p> 
+<h4 class="lined">Creating Your Account</h4>
+<ol>
+<li>The first thing we need to do is sign up with Heroku.  Navigate to their <a href="https://www.heroku.com/home" target="_blank">homepage</a> and click on the large <strong>"SIGN UP FOR FREE"</strong> button<br /><br /></li>
+<li>Next, fill in all of your details including your first name, last name, <strong>Seneca email address</strong>, country (Canada) and select <strong>Node.js</strong> for your "Primary Development Language".  Complete the "I'm not a robot" CAPTCHA by clicking the checkbox and passing the human test, before finally clicking the <strong>"CREATE FREE ACCOUNT"</strong> button.<br /><br /></li>
+<li>This will take you to an <strong>"Almost there..."</strong> page prompting you to verify your email address. By now, Heroku will have sent you an email with the subject "Confirm your account on Heroku" - click on the link in the email to activate your account.<br /><br /></li>
+<li>This will redirect you to a page to enter a password for your account.  Enter <strong>a password that you will remember</strong> twice before clicking the <strong>"SET PASSWORD AND LOG IN"</strong> button.<br /><br /></li>
+<li>This will take you to a <strong>Welcome to Heroku</strong> page.  Click the link to proceed.<br /><br /></li>
+<li><strong>Success!</strong> - welcome to the main Heroku dashboard.  This will show links to a number of "getting started" guides for various environments.  Don't worry about these for now - we will be creating our app from the command line.<br /></li>
+</ol>
+<h4 class="lined">Required Software</h4>
+<ul>
+   <li>By now, you should have <strong>Node.js</strong> (<a href="https://nodejs.org/en/download/" target="_blank">available here</a>) and <strong>Visual Studio Code</strong> (<a href="https://code.visualstudio.com/download" target="_blank">available here</a>). However we will also need two other pieces of software: git &amp; the Heroku CLI<br /><br /></li>
+<li>To download git, proceed to <a href="https://git-scm.com/downloads" target="_blank">this download page</a> and download git for your operating system.<br /><br /></li>
+<li>Proceed to install git with the default settings.  Once this is complete, you can verify that it is installed correctly by opening a command prompt / terminal and issuing the command <strong>git --version</strong>.  This should output something like: git version 2.10.1 ( ... ).  If it does not output the installed version of git, then something is wrong and it is not installed correctly.<br /><br /></li>
+<li>Next, we need the <strong>"Heroku CLI"</strong> - a command line interface to our Heroku account.  This can be <a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install" target="_blank">downloaded here</a>.  Proceed to the page and download the Heroku CLI for your operating system.<br /><br /></li>
+<li>Next, install the Heroku CLI with the default settings.  Once this is complete, you can verify that it is installed correctly by once again opening a command prompt / terminal and issuing the command <strong>heroku --version</strong>.  This should output something like: heroku-cli/5.6.18-9f6df83 ( ... ) go1.7.5.  If it does not output the installed version of the Heroku CLI, then something is wrong and it is not installed correctly.<br /></li>
+</ul>
+<h4 class="lined">Creating Your First App on Heroku!</h4>
+<ol>
+<li>Now that everything is downloaded / installed, we can create our first Node.js app on Heroku!.  To begin, <strong>create a directory</strong> called <strong>helloworld</strong> on your local machine.  <br /><br /></li>
+<li>Open <strong>Visual Studio Code</strong> and Open your "helloworld" folder by clicking on the "Explorer" icon in the top left (it looks like two files) to expand the left "Explorer" pane.  You should see an "Open Folder" button - click this and select to your newly created "helloworld" folder.<br /><br /></li>
+<li>You should now see an empty "HELLOWORLD" folder in the sidebar.  To begin building our app within this folder we have to issue a few commands in Visual Studio Code's "integrated terminal".  To open this use the keyboard shortcut (ctrl + `) or select "View" -&gt; "integrated terminal" from the top menu. <br /><br /></li>
+<li>In the (now visible) integrated terminal, type the command <strong>npm init</strong> and enter the following information:<br /><br /><ul><li>Press enter for name (use the default)</li><li>Press enter for version (use the default)</li><li>Press enter for description (use the default)</li><li>enter <strong>server.js</strong> for entry point:</li><li>Press enter for test command (use the default)</li><li>Press enter for git repository (use the default)</li><li>Press enter for keywords (use the default)</li><li>Type <strong>your own name</strong> for author:</li><li>Press enter for license: (use the default)</li><li>and finally, press enter to accept your entries as ok </li></ul> <br /></li>
+<li>This will create a package.json file under your helloworld folder.  This will help us manage our dependencies later on and is always the first step creating node.js applications.<br /><br /></li>
+<li>Next, we must retrieve the <strong>express</strong> module using npm.  Execute the following command from within the terminal: <strong>npm install express</strong> - this will create a <strong>node_modules</strong> folder with our new express module as well as update our <strong>package.json</strong> file with our dependency!<br /><br /></li>
+<li>The next step is to create your <strong>server.js</strong> file in your helloworld folder either by right-clicking underneath HELLOWORLD in the Explorer pane and choosing "new file", or by clicking the new file icon next to HELLOWORLD.  Name this file <strong>server.js</strong><br /><br /></li>
+<li>You should now be editing your <strong>server.js</strong> file.  Enter the following code:<pre style="margin-top:10px;"><code class="javascript">var HTTP_PORT = process.env.PORT || 8080;
+var express = require("express");
+var app = express();
+
+// setup a 'route' to listen on the default url path
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
+
+// setup http server to listen on HTTP_PORT
+app.listen(HTTP_PORT);</code></pre>Be sure to save your file before moving on.<br /><br /></li>
+<li>Next, issue the following command from the integrated terminal: <strong>git init</strong> - this will initialize a local git repository in your helloworld folder.  You will notice that an icon in the left bar has a new message - It is highlighted with the text "99+".  This represents all of the files that must be added to our local git repo.  Click the button and type "first commit" for the message in the "Message" box.  Once this is done, click the checkmark above the message box to commit your changes.  <br /><br /><strong>NOTE:</strong> If, at this point, you receive the error: "Git: Failed to execute git", try executing the following commands in the integrated terminal:<br /><br />
+<pre>
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+</pre>
+Once this is complete, attempt step 9 again.<br /><br /></li>
+<li>Now that our local git repo is ready to go, we have to create an application within Heroku to send our code to.  This is done by issuing the following commands in the integrated terminal: <br /><br /><ul><li><strong>heroku login</strong> - this command will prompt you to enter your Email and Password.  Once you have done this successfully (by providing the correct email and password for your Heroku account) you will see a message "Logged in as ..." where ... is your email address.</li><li><strong>heroku create</strong> - this command will create our new app within Heroku!  The name that it gives our app is random  (you can change it later).  You will know the name it has given your app by looking at the text next to creating app... done,  [ <em>app name here</em> ].  You will also see a url in the form <strong>https://[ <em> app name here </em> ].herokuapp.com</strong></ul><br /></li>
+<li>We're getting close, but not quite done yet - we need to issue one more command: <strong>git push heroku master</strong> - this command pushes the content of our local git repo to our new app on Heroku!<br /><br /></li>
+<li>To verify that this is working correctly, visit that new url that you received when creating the new app (it should still be in the integrated terminal - you just have to scroll up).  You should see the text <strong>Hello World!</strong> from our server.js file. <br /><br /></li>
+</ol>
+<p><strong>Congratulations!</strong> you have published your first Node.js application online.  We will continue to do this throughout the semester so this process will become very familiar.  If you would like to see your application in the Heroku dashboard, you can log into Heroku here: <a href="https://id.heroku.com/login" target="_blank">https://id.heroku.com/login</a>.  You should see your newly created app waiting for you - click on it to see information about the application including recent activity, metrics, app settings, resources, etc. </p><p>Lastly, If you would like to make modifications to your existing application, simply:
+<ol><li>Make your changes</li>
+<li>Click on the Source Control (Git) icon</li>
+<li>Write an appropriate message describing your change</li>
+<li>Click the checkmark to commit your changes</li>
+<li>Push your changes to heroku using: <strong>git push heroku master</strong></li>
+</ol>
+You should now see the changes reflected in your app!</p>  
+<h3>Happy Coding!</h3>
+
+</div>
+<div class="row-item col-1_4">
+<h3 class="lined">Sources</h3>
+<ul>
+	<li><a href="https://devcenter.heroku.com" target="_blank">https://devcenter.heroku.com</a></li>
+        <li><a href="https://www.heroku.com/" target="_blank">https://www.heroku.com/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div></div>
+ </div>  
+
+<!-- /content -->
+
+
+
+    
+    <!-- footer -->
+
+    <footer id="footer">
+
+    <div class="footer">
+
+    <!-- Widget Area -->
+        
+        <div class="b-widgets">
+    
+            <div class="layout">
+    
+                <div class="row">
+    
+                    <div id="text-3" class="widget widget_text row-item col-1_4">			<div class="textwidget">&copy; 2017 Seneca College - Maintained by <a href="mailto:patrick.crawford@senecacollege.ca">Patrick Crawford</a></div>
+		</div>    
+                </div>
+    
+            </div>
+    
+        </div>
+        
+        <!-- End Widget Area -->
+
+    <!-- Copyright Area -->
+        
+    <div class="b-copyright">
+
+        <div class="layout">
+
+            <!-- Copyright Text -->
+
+                        
+
+            
+
+        </div>
+
+    </div>
+    
+    
+</div>
+
+<!-- END FOOTER 
+
+============================================= -->
+
+
+
+
+	
+
+
+    </footer>
+
+    <!-- /footer -->
+
+    
+</div>
+<!-- wrapper -->
+</div>
+<!-- Powered by WordPress and the SpyroPress Framework -->
+
+<link rel='stylesheet' id='hljstheme-css'  href='/~patrick.crawford/wp-content/plugins/wp-code-highlightjs/styles/default.css?ver=0.5.13' type='text/css' media='all' />
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery.prettyPhoto.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/filter.js?ver=4.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var theme_settings = {"ajaxURL":"http:\/\/zenit.senecac.on.ca\/~patrick.crawford\/wp-admin\/admin-ajax.php","twitter_feed":"http:\/\/zenit.senecac.on.ca\/~patrick.crawford\/wp-admin\/admin-ajax.php?action=spyropress_twitter_tweets","loaderUrl":"","sending":"Sending ...","assets":"http:\/\/zenit.senecac.on.ca\/~patrick.crawford\/wp-content\/themes\/boson\/assets\/","bg":"bg-random_grey_variations"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/twitter.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery.isotope.min.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery.flexslider.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/owl-carousel/owl.carousel.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/zebra_accordion.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery-ui.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/waypoint-sticky-nav/waypoints.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/waypoint-sticky-nav/waypoints-sticky.min.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery.scrollTo.min.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/jquery.appear.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/themes/boson/assets/js/main.js?ver=2.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-includes/js/wp-embed.min.js?ver=4.4.1'></script>
+<script type='text/javascript' src='/~patrick.crawford/wp-content/plugins/wp-code-highlightjs/highlight.common.pack.js?ver=0.5.13'></script>
+    <style>pre.hljs {padding: 5px; font-size:13px !important;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+
+            init_fn_flag = true;
+
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+
+        });
+
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+
+</body>
+
+</html>
